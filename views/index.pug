@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul#subjects
+  li
+    a(href="prices") prices
+    | : go to prices list page  
+  li
+    a(href="start") start
+    | : start fetching price data
+  li
+    a(href="stop") stop
+    | : stop fetching price data
+    

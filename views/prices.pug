@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= data.title
+  p Welcome to #{data.title} - refresh to see prices updated in background
+  table(style='width:100%', border='1')
+    thead
+      tr
+        th= data.title
+        th= "price (GPB)/unit"
+        th= "last updated"
+    tbody
+      tr
+      - if (data)
+          each v,k in data.prices
+            tr
+              td=k
+              td=v.price
+              td=v.timestamp
+      - else
+          tr 
+            td prices go here...
